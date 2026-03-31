@@ -1,6 +1,8 @@
 const userModel = require('../models/user.model');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
+const emailService = require('../services/email.service');
+
 
 /**
 * - user register controller
