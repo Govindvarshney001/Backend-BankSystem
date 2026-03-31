@@ -1,19 +1,16 @@
-const express = require('express');
-const authRoutes = require('./routes/auth.routes');
-const accountRouter = require('./routes/account.routes')
-const cookieParser = require('cookie-parser');
-
-
+const express = require("express");
+const authRoutes = require("./routes/auth.routes");
+const accountRouter = require("./routes/account.routes");
+const cookieParser = require("cookie-parser");
+const transactionRoutes = require("./routes/transaction.routes");
 
 const app = express();
-
 
 app.use(express.json());
 app.use(cookieParser());
 
-const transactionRoutes = require('./routes/transaction.routes');
-
 app.use("/api/auth", authRoutes);
-app.use("/api/accounts" ,accountRouter)
+app.use("/api/accounts", accountRouter);
+app.use("/api/transactions", transactionRoutes); // ✅ FIX
 
 module.exports = app;
